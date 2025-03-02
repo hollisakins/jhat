@@ -2,7 +2,7 @@ from setuptools import setup
 import os,glob,warnings,sys,fnmatch,subprocess
 from setuptools.command.test import test as TestCommand
 from distutils.core import setup
-import numpy.distutils.misc_util
+import numpy
 
 
 if sys.version_info < (3,0):
@@ -56,7 +56,7 @@ setup(
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license=LICENSE,
-    include_dirs=numpy.distutils.misc_util.get_numpy_include_dirs(),
+    include_dirs=numpy.get_include(),
     package_data={PACKAGENAME:data_files},
     include_package_data=True
 )
